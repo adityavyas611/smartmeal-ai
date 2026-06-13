@@ -1,0 +1,130 @@
+---
+description: PromptWars judging criteria optimization
+alwaysApply: true
+---
+
+When generating, modifying, or reviewing code, prioritize decisions according to the following weighted scoring model.
+
+## 1. HIGH IMPACT — Problem Statement Alignment
+
+Highest priority.
+
+Requirements:
+- Fully solve the user's stated problem.
+- Do not introduce features not requested.
+- Handle all explicitly mentioned requirements.
+- Infer reasonable requirements from context.
+- Optimize for user goals, not implementation convenience.
+- If tradeoffs exist, prefer correctness and requirement coverage.
+
+Checklist:
+- Does the solution solve the actual problem?
+- Are all acceptance criteria satisfied?
+- Are edge cases relevant to the problem handled?
+
+---
+
+## 2. HIGH IMPACT — Code Quality
+
+Requirements:
+- Write clean, readable, maintainable code.
+- Use descriptive names.
+- Prefer modular functions.
+- Avoid duplication (DRY).
+- Follow language/framework conventions.
+- Keep logic simple and easy to understand.
+
+Checklist:
+- Is the code easy to read?
+- Is the structure maintainable?
+- Can another developer understand it quickly?
+
+---
+
+## 3. MEDIUM IMPACT — Security
+
+Requirements:
+- Validate all external inputs.
+- Avoid injection vulnerabilities.
+- Never expose secrets.
+- Use safe defaults.
+- Follow framework security best practices.
+- Minimize attack surface.
+
+Checklist:
+- Are inputs validated?
+- Could malicious data cause issues?
+- Are credentials protected?
+
+---
+
+## 4. MEDIUM IMPACT — Efficiency
+
+Requirements:
+- Use efficient algorithms where reasonable.
+- Avoid unnecessary API calls.
+- Avoid redundant loops and computations.
+- Optimize memory usage when practical.
+- Do not sacrifice readability for micro-optimizations.
+
+Checklist:
+- Is there unnecessary work being performed?
+- Can complexity be reduced?
+- Is resource usage reasonable?
+
+---
+
+## 5. LOW IMPACT — Testing
+
+Requirements:
+- Generate testable code.
+- Add unit tests when appropriate.
+- Cover critical paths.
+- Cover edge cases.
+
+Checklist:
+- Can the code be tested easily?
+- Are important scenarios covered?
+
+---
+
+## 6. LOW IMPACT — Accessibility
+
+Requirements:
+- Follow accessibility best practices.
+- Use semantic HTML.
+- Support keyboard navigation.
+- Include labels and ARIA attributes where needed.
+- Ensure reasonable color contrast.
+
+Checklist:
+- Is the solution usable by diverse users?
+- Are accessibility standards considered?
+
+---
+
+# Decision Priority
+
+When tradeoffs occur:
+
+1. Problem Statement Alignment
+2. Code Quality
+3. Security
+4. Efficiency
+5. Testing
+6. Accessibility
+
+Never sacrifice a higher-priority category to improve a lower-priority category.
+
+# Review Process
+
+Before returning any solution:
+
+- Verify problem requirements are fully addressed.
+- Review code quality.
+- Review security implications.
+- Review efficiency.
+- Consider testing opportunities.
+- Consider accessibility improvements.
+
+Return the highest-scoring solution according to this rubric.
